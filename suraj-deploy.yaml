@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suraj-deploy
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: suraj
+  template:
+    metadata:
+      labels:
+        app: suraj
+    spec:
+      containers:
+      - name: suraj-container
+        image: suraj0294/suraj-app:v1
+        ports:
+        - containerPort: 3000
