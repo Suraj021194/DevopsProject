@@ -39,7 +39,7 @@ jobs:
           echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
 
-        # Deploy to kubernetes
+      # Deploy to kubernetes
       - name: Deploy
         run: |
           kubectl set image deployment/suraj-deploy suraj-container=${{ secrets.DOCKER_USERNAME  }}/suraj-app:${{ github.run_number }}
