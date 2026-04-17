@@ -16,5 +16,6 @@ spec:
       containers:
       - name: suraj-container
         image: suraj0294/suraj-app:v1
+        imagePullPolicy: Alwyas
         ports:
         - containerPort: 3000
