@@ -33,14 +33,14 @@ jobs:
       - name: Setup kubectl
         uses: azure/setup-kubectl@v3
 
-      # Configure kuberconfig
+      # Configure kubeconfig
       - name: Set kubeconfig
         run: |
           echo "${{ secrets.KUBE_CONFIG }}" > kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
 
         # Deploy to kubernetes
-        - name: Deploy
-          run: |
-            kubectl set image deployment/suraj-deploy suraj-container=${{ secrets.DOCKER_USERNAME  }}/suraj-app:${{ github/run_number }}
- 
+      - name: Deploy
+        run: |
+          kubectl set image deployment/suraj-deploy suraj-container=${{ secrets.DOCKER_USERNAME  }}/suraj-app:${{ github/run_number }}
+
