@@ -42,5 +42,5 @@ jobs:
         # Deploy to kubernetes
       - name: Deploy
         run: |
-          kubectl set image deployment/suraj-deploy suraj-container=${{ secrets.DOCKER_USERNAME  }}/suraj-app:${{ github/run_number }}
+          kubectl set image deployment/suraj-deploy suraj-container=${{ secrets.DOCKER_USERNAME  }}/suraj-app:${{ github.run_number }}
 
